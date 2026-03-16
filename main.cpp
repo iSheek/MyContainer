@@ -21,6 +21,8 @@ public:
 			++it;
 		}
 	}
+
+	// destructor
 	~MyVector()
 	{
 		delete[] this->_data;
@@ -55,12 +57,22 @@ public:
 		return this->_data[index];
 	}
 
-	T* begin() const
+	T* begin() 
 	{
 		return this->_data;
 	}
 
-	T* end() const
+	T* end() 
+	{
+		return this->_data + this->_size;
+	}
+
+	const T* begin() const
+	{
+		return this->_data;
+	}
+
+	const T* end() const
 	{
 		return this->_data + this->_size;
 	}
@@ -133,6 +145,181 @@ public:
 		}
 
 	}
+
+
+	// copy constructor
+	MyVector(const MyVector<T>& other)
+	{
+		this->_size = other._size;
+		this->_capacity = other._capacity;
+
+
+		this->_data = new T[other._capacity];
+
+		for (size_t it = 0; it < other._size; ++it)
+		{
+			this->_data[it] = other._data[it];
+		}
+
+	}
+
+	// copy assignment constructor
+	MyVector<T>& operator=(const MyVector<T>& other)
+	{
+		if (this == &other) return *this;
+
+		
+
+		T* newData = new T[other._capacity];
+
+		this->_size = other._size;
+		this->_capacity = other._capacity;
+
+		for (size_t it = 0; it < other._size; ++it)
+		{
+			newData[it] = other._data[it];
+		}
+
+		delete[] this->_data;
+
+		this->_data = newData;
+
+		return *this;
+
+	}
+
+	// move constructor
+	MyVector(MyVector<T>&& other) noexcept
+	{
+		this->_capacity = other._capacity;
+		this->_size = other._size;
+		this->_data = other._data;
+
+		other._data = nullptr;
+		other._capacity = 0;
+		other._size = 0;
+
+	}
+
+	// move assignment constructor
+	MyVector<T>& operator=(MyVector<T>&& other) noexcept
+	{
+		if (this == &other) return *this;
+
+		this->_capacity = other._capacity;
+		this->_size = other._size;
+
+
+		delete[] this->_data;
+		this->_data = other._data;
+
+		other._capacity = 0;
+		other._size = 0;
+		other._data = nullptr;
+
+		return *this;
+	}
+
+	void pop_back()
+	{
+		if (this->_size == 0) return;
+
+		this->_data[this->_size - 1].~T();
+		--this->_size;
+	}
+
+	void clear()
+	{
+		for (size_t it = 0; it < this->_size; ++it)
+		{
+			this->_data[it].~T();
+		}
+		this->_size = 0;
+	}
+
+	void erase(T* pos)
+	{
+		++pos;
+		while (pos < this->end())
+		{
+			*(pos - 1) = *pos++;
+		}
+		this->_data[this->_size - 1].~T();
+		--this->_size;
+	}
+
+	T& front()
+	{
+		return this->_data[0];
+	}
+
+	const T& front() const
+	{
+		return this->_data[0];
+	}
+
+	T& back()
+	{
+		return this->_data[this->_size - 1];
+	}
+
+	const T& back() const
+	{
+		return this->_data[this->_size - 1];
+	}
+
+	T* data()
+	{
+		return this->_data;
+	}
+
+	const T* data() const
+	{
+		return this->_data;
+	}
+
+	bool empty() const
+	{
+		return this->_size == 0;
+	}
+
+	void reserve(size_t newCap)
+	{
+		if (newCap <= this->_capacity) return;
+
+		
+
+		T* newData = new T[newCap];
+
+		for (size_t it = 0; it < this->_size; ++it)
+		{
+			newData[it] = this->_data[it];
+		}
+
+		delete[] this->_data;
+		this->_capacity = newCap;
+		this->_data = newData;
+	}
+
+	void shrink_to_fit()
+	{
+		if (this->_capacity <= this->_size) return;
+
+		T* newData = new T[this->_size];
+
+		for (size_t it = 0; it < this->_size; ++it)
+		{
+			newData[it] = this->_data[it];
+		}
+
+		delete[] this->_data;
+		this->_capacity = this->_size;
+		this->_data = newData;
+
+	}
+
+
+
 
 };
 
