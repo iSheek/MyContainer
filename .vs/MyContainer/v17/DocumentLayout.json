@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{45799A92-DA09-4F12-B5F3-BAFE16C1C02E}|MyContainer.vcxproj|C:\\Users\\48604\\source\\repos\\MyContainer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{45799A92-DA09-4F12-B5F3-BAFE16C1C02E}|MyContainer.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45799A92-DA09-4F12-B5F3-BAFE16C1C02E}|MyContainer.vcxproj|C:\\Users\\48604\\source\\repos\\MyContainer\\MyVector.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{45799A92-DA09-4F12-B5F3-BAFE16C1C02E}|MyContainer.vcxproj|solutionrelative:MyVector.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,13 +30,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MyVector.hpp",
+              "DocumentMoniker": "C:\\Users\\48604\\source\\repos\\MyContainer\\MyVector.hpp",
+              "RelativeDocumentMoniker": "MyVector.hpp",
+              "ToolTip": "C:\\Users\\48604\\source\\repos\\MyContainer\\MyVector.hpp",
+              "RelativeToolTip": "MyVector.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEBAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-16T23:36:00.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\48604\\source\\repos\\MyContainer\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\48604\\source\\repos\\MyContainer\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAABwAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-03-16T18:24:56.618Z",
               "EditorCaption": ""
